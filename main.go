@@ -27,6 +27,7 @@ func main() {
 	}
 	fmt.Println(u)
 	start := time.Now()
+	defer close(c)
 	for i := 0; i < vu; i++ {
 		go sendRequest(link, c, i)
 	}
